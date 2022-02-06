@@ -11,9 +11,12 @@
     "TELEGRAM_CHAT_ID": {"required": false},
     "REDIRECT_URL": {"required": false},
     "DELIVERY_SECRET": {"required": false},
-    "OAUTH_HOST": "github.com",
+    "OAUTH_GRANT_TYPE": "authorization_code",
+    "OAUTH_REDIRECT_URI": "",
+    "OAUTH_CODE_VERIFIER": "",
+    "OAUTH_HOST": "gitlab.com",
     "OAUTH_PORT": "443",
-    "OAUTH_PATH": "/login/oauth/access_token",
+    "OAUTH_PATH": "/oauth/token",
     "OAUTH_METHOD": "POST"
   }
 }
