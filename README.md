@@ -1,15 +1,17 @@
-Gatekeeper
+GateKeeper
 ==========
 
-Because of some [security-related limitations](http://blog.vjeux.com/2012/javascript/github-oauth-login-browser-side.html), Github prevents you from implementing the OAuth Web Application Flow on a client-side only application.
+A forked version from [prose/gatekeeper](https://github.com/prose/gatekeeper) with improvements on:
+- URL Redirection.
+- GitHub Apps Subscription Webhook support.
+- [GitLab support](../../tree/GitLab).
+- Send Interactions to Telegram.
+
+Because of some [security-related limitations](http://blog.vjeux.com/2012/javascript/github-oauth-login-browser-side.html), Github / GitLab prevents you from implementing the OAuth Web Application Flow on a client-side only application.
 
 This is a real bummer. So we built Gatekeeper, which is the missing piece you need in order to make it work.
 
-Gatekeeper works well with [Github.js](http://github.com/michael/github), which helps you access the [Github API](http://developer.github.com/v3/) from the browser. Gatekeeper is free to use under the [MIT license](https://github.com/prose/gatekeeper/blob/master/LICENSE).
-
-## New Release
-
-:tada: We are currently working on releasing a new major version of gatekeeper. You can join the discussion and get involved by following this [issue](https://github.com/prose/gatekeeper/issues/38). :tada:
+Gatekeeper works well with [Github.js](http://github.com/michael/github), which helps you access the [Github API](http://developer.github.com/v3/) or GitLab API from the browser. Gatekeeper is free to use under the [MIT license](https://github.com/HollowMan6/GateKeeper/blob/master/LICENSE).
 
 ## API
 
@@ -48,7 +50,7 @@ Also see the [documentation on Github](http://developer.github.com/v3/oauth/).
 1. Clone it
 
     ```
-    git clone git@github.com:prose/gatekeeper.git
+    git clone git@github.com:HollowMan6/GateKeeper.git
     ```
 
 2. Install Dependencies

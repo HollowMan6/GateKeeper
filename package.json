@@ -1,7 +1,7 @@
 {
   "name": "gatekeeper",
-  "description": "Enables client-side applications to dance OAuth with Github.",
-  "url": "http://github.com/prose/gatekeeper",
+  "description": "Enables client-side applications to dance OAuth with Github or GitLab.",
+  "url": "http://github.com/HollowMan6/GateKeeper",
   "keywords": [
     "github",
     "oauth"
@@ -12,22 +12,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/prose/gatekeeper"
+    "url": "https://github.com/HollowMan6/GateKeeper"
   },
   "author": "Michael Aufreiter",
   "license": "MIT",
   "contributors": [],
   "dependencies": {
-    "express": "~4.16.2"
+    "express": "~4.17.2"
   },
   "engines": {
-    "node": "~6.11.1"
+    "node": "~16.11.1"
   },
   "main": "index",
   "version": "0.1.0",
   "devDependencies": {
-    "nock": "^9.1.4",
-    "supertest": "^3.0.0",
-    "tape": "^4.8.0"
+    "nock": "^13.2.4",
+    "supertest": "^6.2.2",
+    "tape": "^5.5.0"
   }
 }
